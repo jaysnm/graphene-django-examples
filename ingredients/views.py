@@ -1,2 +1,6 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from graphene_django.views import GraphQLView
 
-# Create your views here.
+class ProtectedGraphiQL(LoginRequiredMixin,GraphQLView):
+    login_url = '/admin/'
+        
